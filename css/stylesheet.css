@@ -1,6 +1,6 @@
 body{
     font-family: 'Sunflower';
-    background-color: blanchedalmond;
+    background-color: red;
     height: 100%;
 }
 a{
@@ -20,16 +20,16 @@ html {
 }
 
 .instructions{
-    background-color: chocolate;
-    border-color: chocolate;
+    background-color: red;
+    border-color: red;
 }
 
 #nav{
-    background-color: peru !important;
+    background-color: white !important;
 }
 
 footer{
-    background-color: peru;
+    background-color:  rgb(250, 250, 93);
     bottom: 0;
     overflow: hidden;
 
@@ -42,19 +42,19 @@ footer{
 
 #rodada{
     margin-top: 3%; 
-    color: rgb(69, 40, 14);
+    color:  black;
 }
 
 #title{
     font-style: italic;
     font-size: 1.3em;
     font-family: 'Inconsolata', monospace;
-    color: rgb(69, 40, 14);
+    color:  red;
 }
 #card1, #card2 {
     margin-bottom: 10%;
     padding: 0px;
-    background-color: peru;
+    background-color: rgb(250, 250, 93);
 }
 #fc1, #fc2{
     padding-left: 4%;

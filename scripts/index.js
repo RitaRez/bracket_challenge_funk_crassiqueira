@@ -187,7 +187,7 @@ var array = [
         "nome": "Creu",
         "audio": "assets/audio/secretaria.mp3",
         "imagem": "assets/images/creu.jpg",
-        "texto": "creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu..!"
+        "texto": "creu creu creu creu  creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu..!"
     },
     {
         "id": 11,

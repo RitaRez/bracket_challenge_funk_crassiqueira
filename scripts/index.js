@@ -28,7 +28,7 @@ function buttonClicked(btn){
     
     
     if (array.length == 2) {
-        let temp = "https://ritarez.github.io/bracket_challenge/"
+        let temp = "https://ritarez.github.io/bracket_challenge_funk_crassiqueira/"
         // let address = window.location.href.split('').splice(0, window.location.href.length-10).join('')+'bracket?bracket='+arrayAux.join('-')
         let address = temp +'bracket?bracket='+arrayAux.join('-')
         address = address + '&name=' + document.getElementById('nome').value;
@@ -132,4 +132,80 @@ var array = [
         "audio": "assets/audio/secretaria.mp3",
         "imagem": "assets/images/glamurosa.jpg",
         "texto": "Glamourosa, rainha do funk, poderosa, olhar de diamante, nos envolve, nos fascina, agita o salão, balança gostoso, requebrando até o chão"
-    }]
+    },
+    {
+        "id": 2,
+        "nome": "Malha Funk",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/malhafunk.jpeg",
+        "texto": "Vira de ladinho, levanta a perninha, descendo e subindo, to perdendo a linha."
+    },
+    {
+        "id": 3,
+        "nome": "Pampam",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/pampam.jpg",
+        "texto": "Pam pam pam ram pam ti pam pam pam"
+    },
+    {
+        "id": 4,
+        "nome": "Eguinha Pocotó",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/pocoto.jpg",
+        "texto": "Vou mandando um beijinho... pra filhinha e pra vovó. Só não posso esquecer da minha egüinha pocotó!"
+    },
+    {
+        "id": 5,
+        "nome": "O Baile todo",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/bailetodo.jpg",
+        "texto": "Só as cachorras. As preparadas. As popozudas. O baile todo!"
+    },
+    {
+        "id": 6,
+        "nome": "Se ela dança eu danço",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/leozinho.jpg",
+        "texto": "Se ela dança eu danço. Se ela dança eu danço. Se ela dança eu danço. Falei com o DJ!"
+    },
+    {
+        "id": 7,
+        "nome": "Cerol na Mão",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/cerol.jpg",
+        "texto": "Quer dançar, quer dançar? O tigrão vai te ensinar."
+    },
+    {
+        "id": 8,
+        "nome": "Um morto muito louco",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/morto.jpg",
+        "texto": "Param param Pam pam pam pam Param param param param pam pam pam pam Hey!"
+    },
+    {
+        "id": 9,
+        "nome": "Creu",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/creu.jpg",
+        "texto": "creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu creu..!"
+    },
+    {
+        "id": 11,
+        "nome": "Tremendo Vacilão",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/tirap.jpg",
+        "texto": "Tirap Tchoron! Tirap Tchoron! Oh! Ah!"
+    },
+    {
+        "id": 12,
+        "nome": "Adultério",
+        "audio": "assets/audio/secretaria.mp3",
+        "imagem": "assets/images/catra.jpg",
+        "texto": "Oi oi oi oi o bagulho tá sério, vai rolar o adultério!"
+    }
+]
+
+
+
+    
+    

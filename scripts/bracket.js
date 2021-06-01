@@ -1,122 +1,57 @@
-var arrayAux = [];
-var arrayE = [];
-var i = 0;
-var count = 0;
-var m = []
 
-$(document).ready(function(){
-    let nav = $('#nav').css('height');
-    $("#canvas").css('margin-top', nav/2);
-    document.getElementById('rodada').innerHTML = "Oitavas de final - Duelo " + (count + 1) + "/8";
-    round();
-});
+var bracket = []
 
-function round (){
-    run(i);
+
+window.onload = function(){
+    let link = "https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text="+encodeURIComponent(window.location.href)
+    let url = new URL(window.location.href);
+    let nome = url.searchParams.get("name");
+    let aux = url.searchParams.get("bracket").split('-');
+
+    if(nome && nome != '')
+        document.getElementById('title').innerHTML = nome + "'s bracket";
+
+    array.map((element) => {
+        bracket.push(element);
+    })
+    aux.map((id) => {
+        bracket.push(get(id));
+    })
+    render();
+};
+
+function get(i){
+    return array[i];
 }
-function run (i){
-    imageSetup(array[i], array[i+1]);
-    soundSetup(array[i], array[i+1]);
-}
 
-function buttonClicked(btn){
+function render (){
+    for(let i = 1; i < 6; i++){
+        let elementId = 'col'+i;
+        let element = document.getElementById(elementId);
+        for (let j= 0; j < Math.pow(2, 5-i); j++) {
 
-    arrayAux.push(array[i+btn].id);
-    arrayE.push(array[i+btn]);
-    
-    console.log(window.location.href);
-    
-    
-    if (array.length == 2) {
-        let temp = "https://ritarez.github.io/bracket_challenge_funk_crassiqueira/"
-        // let address = window.location.href.split('').splice(0, window.location.href.length-10).join('')+'bracket?bracket='+arrayAux.join('-')
-        let address = temp +'bracket?bracket='+arrayAux.join('-')
-        address = address + '&name=' + document.getElementById('nome').value;
-
-        window.location.href = address;
-
-    }
-    else{
-        if(i < array.length - 2){
-            i = i+2;
-            count++;
-        }   
-        else{
-            i = 0;
-            count = 0;
-            array = arrayE;
-            arrayE = [];
+            let card = document.createElement('DIV');
+            card.setAttribute( 'class', 'el'+i);
+            card.id='c'+i+'l'+j;
+            card.innerHTML = '<p class="z-depth-5 elementText">'+ bracket[j].nome +"</p>"
+            element.appendChild(card);
         }
-        round()
+        bracket.splice(0, Math.pow(2, 5-i));
     }
-    if(arrayAux.length < 8)
-        document.getElementById('rodada').innerHTML = "Oitavas de final - Duelo " + (count + 1) + "/8";
-    if(arrayAux.length > 7 && arrayAux.length < 12)
-        document.getElementById('rodada').innerHTML = "Quartas de final - Duelo " + (count + 1) + "/4";
-    else if(arrayAux.length > 11 && arrayAux.length < 14)
-        document.getElementById('rodada').innerHTML = "Semi-final - Duelo " + (count + 1) + "/2";
-    else if(arrayAux.length > 13)
-        document.getElementById('rodada').innerHTML = "A grande final"
-
-    
-}
-function imageSetup(obj1, obj2){
-    $('#img1').attr('src', obj1.imagem);
-    $('#img2').attr('src', obj2.imagem);
-
-    $('#cardTitle1').html(obj1.nome);
-    $('#cardTitle2').html(obj2.nome);
-
-    $('#text1').html(obj1.texto);
-    $('#text2').html(obj2.texto);
-
 }
 
-
-function soundSetup (obj1, obj2){
-    soundManager.setup({
-      // where to find flash audio SWFs, as needed
-      url: '/path/to/swf-files/',
-
-      onready: function() {
-
-        soundManager.stopAll();
-        if(m[obj1.id]){
-            m[obj1.id].destruct();
-            m[obj2.id].destruct();
-        }
-        m[obj1.id] =  soundManager.createSound({
-            url: obj1.audio
-        });
-        m[obj2.id] = soundManager.createSound({
-        url: obj2.audio
-        });   
-        $( "#card1" ).unbind();
-        $( "#card2" ).unbind();
-
-   
-        $( "#card1" )
-            .mouseover(function() {
-                m[obj1.id].play();
-            })
-            .mouseout(function (){
-                m[obj1.id].stop();
-            });
-
-        $( "#card2" )
-            .mouseover(function() {
-                m[obj2.id].play();
-            })
-            .mouseout(function (){
-                m[obj2.id].stop();
-            }); 
-      }
-    });
+function shareTwitter(){
+    let link = "https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=" +
+    "My modãos bracket: " +
+    encodeURIComponent(window.location.href)
+    window.open(link);
 }
 
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+function shareTumblr(){
+            window.open('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=bracketChallenge&caption='
+            +'my bracket' +'&content='
+            + encodeURIComponent(window.location.href) +'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+}
 
 var array = [
     {
@@ -231,5 +166,3 @@ var array = [
         "imagem": "assets/images/feliz.jpg",
         "texto": "Eu só quero é ser feliz, andar tranquilamente na favela onde eu nasci!"
     }]
-
-    
